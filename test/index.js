@@ -8,12 +8,12 @@ describe('mask.js', function () {
       done()
     })
   })
-  it('must work', function(done){
+  it('must work by matching the resuls in test/customers.json', function(done){
     var mask = require(path.join(__dirname, '../mask'))
     mask(function(error, maskedData){
       expect(error).to.be.null
-      var maskedTestData = fs.readFileSync('./test/customers.json', 'utf8')
-      expect(maskedData).to.equal(maskedTestData)
+      var maskedTestData = require('./customers.json')
+      expect(maskedData).to.deep.equal(maskedTestData)
       done()
     })
   })

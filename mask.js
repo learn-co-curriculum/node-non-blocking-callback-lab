@@ -28,7 +28,7 @@ module.exports = function(callback){
           var customersJSON = JSON.stringify(customers, null, 2)
           fs.writeFile('./customers.json', customersJSON, 'utf-8', function(error){
             if (!error) {
-              return callback(null, customersJSON)
+              return callback(null, customers)
             } else {
               return callback(error)
             }
