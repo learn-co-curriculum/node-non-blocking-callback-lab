@@ -1,6 +1,7 @@
 var expect = require('chai').expect
 var fs = require('fs')
 var path = require('path')
+var moduleFile = '../mask2.js'
 
 describe('mask.js', function () {
   before(function(done){
@@ -9,7 +10,7 @@ describe('mask.js', function () {
     })
   })
   it('must work by matching the resuls in test/customers.json', function(done){
-    var mask = require(path.join(__dirname, '../mask'))
+    var mask = require(path.join(__dirname, moduleFile))
     mask(function(error, maskedData){
       expect(error).to.be.null
       var maskedTestData = require('./customers.json')
@@ -18,12 +19,12 @@ describe('mask.js', function () {
     })
   })
   it('must have readFile ', function(done){
-    var mask = fs.readFileSync(path.join(__dirname, '../mask.js'), 'utf8')
+    var mask = fs.readFileSync(path.join(__dirname, moduleFile), 'utf8')
     expect(mask).to.contain('readFile')
     done()
   })
   it('must have writeFile ', function(done){
-    var mask = fs.readFileSync(path.join(__dirname, '../mask.js'), 'utf8')
+    var mask = fs.readFileSync(path.join(__dirname, moduleFile), 'utf8')
     expect(mask).to.contain('writeFile')
     done()
   })
