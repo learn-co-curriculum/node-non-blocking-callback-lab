@@ -1,9 +1,9 @@
 var expect = require('chai').expect
 var fs = require('fs')
 var path = require('path')
-var moduleFile = '../mask.js'
+var moduleFile = '../mask3.js'
 
-describe('mask.js', function () {
+describe('mask3.js', function () {
   before(function(done){
     fs.unlink(path.join(__dirname, '../customers.json'), function(){
       done()
@@ -19,12 +19,12 @@ describe('mask.js', function () {
     })
   })
   it('must have readFile ', function(done){
-    var mask = fs.readFileSync(path.join(__dirname, moduleFile), 'utf8')
+    var mask = fs.readFileSync(path.join(__dirname, '..', 'mask3-read-file.js'), 'utf8')
     expect(mask).to.contain('readFile')
     done()
   })
   it('must have writeFile ', function(done){
-    var mask = fs.readFileSync(path.join(__dirname, moduleFile), 'utf8')
+    var mask = fs.readFileSync(path.join(__dirname, '..', 'mask3-write-file.js'), 'utf8')
     expect(mask).to.contain('writeFile')
     done()
   })

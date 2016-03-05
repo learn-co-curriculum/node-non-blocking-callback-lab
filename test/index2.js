@@ -1,9 +1,9 @@
 var expect = require('chai').expect
 var fs = require('fs')
 var path = require('path')
-var moduleFile = '../mask.js'
+var moduleFile = '../mask2.js'
 
-describe('mask.js', function () {
+describe('mask2.js', function () {
   before(function(done){
     fs.unlink(path.join(__dirname, '../customers.json'), function(){
       done()
