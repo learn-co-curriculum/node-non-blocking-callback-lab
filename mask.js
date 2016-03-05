@@ -1,6 +1,11 @@
 var fs = require('fs')
 var inputFile = './customers.csv'
-
+function mask (creditCardNumber) {
+  return creditCardNumber.split('').map(function(number, index, list){
+    if (index >= list.length -4) return number
+    else return '*'
+  }).join('')
+}
 module.exports = function(callback){
   var customers = []
   fs.stat(inputFile, function(error, stats){
@@ -17,7 +22,7 @@ module.exports = function(callback){
               email: customerArray[3],
               city: customerArray[4],
               creditCard: customerArray[5],
-              creditCardNumber: '************' + customerArray[6].substr(12)
+              creditCardNumber: mask(customerArray[6])
             })
           })
           var customersJSON = JSON.stringify(customers, null, 2)
