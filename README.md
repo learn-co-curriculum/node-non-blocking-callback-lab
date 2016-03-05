@@ -78,3 +78,14 @@ module.exports = function(callback){
 ```
 
 ### Extra Info
+
+The modularized script will behave wit this flow:
+
+```
+test/index.js
+⤷mask3.js
+  	⤷mask3-check-file.js
+  		⤷mask3-read-file.js
+  			⤷mask3-write-file.js
+  				⤷test/index.js (callback)
+```
