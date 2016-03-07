@@ -7,7 +7,7 @@
 
 ## Introduction
 
-You've been tasked by the team to refactor some ugly code which was written by a person who didn't know how to escape the callback hell. You colleagues know you are the master of simplifying code. They love simple code because it's easier to understand. In addition, when you have modularized code (chunks of code split into different modules) you can re-use the code in other projects. 
+You've been tasked by your dev team to refactor some ugly code. You colleagues know you are the master of simplifying code, and dealing with callback hell.
 
 The code is converting private information from a CSV format into a JSON with obfuscated credit card numbers. Security is important. That's why this script is hiding all the credit card number digits except the last four. We don't want hackers to get the CC numbers so easily if the data gets compromised!
  
